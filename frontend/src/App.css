@@ -430,6 +430,106 @@
   margin-top: 22px;
 }
 
+.pdf-report {
+  background: #ffffff;
+  color: #2d2d2d;
+  padding: 24px;
+}
+
+.pdf-cover {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #ddd;
+}
+
+.pdf-cover h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: -0.03em;
+}
+
+.report-description {
+  margin: 10px 0 0;
+  max-width: 540px;
+  line-height: 1.6;
+  color: #5c4b3c;
+}
+
+.report-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #6b5a4a;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.detail-grid {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 18px 0;
+  border-top: 1px solid rgba(226, 184, 117, 0.35);
+  border-bottom: 1px solid rgba(226, 184, 117, 0.35);
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.detail-label {
+  color: #8b6c2f;
+  font-weight: 700;
+}
+
+.detail-row span:last-child {
+  color: #3b2a0f;
+}
+
+.detail-row,
+.competitor-card {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.competitor-card {
+  border: 1px solid rgba(222, 192, 146, 0.6);
+  background: #fffaf0;
+  padding: 18px;
+}
+
+.competitor-card h4 {
+  margin: 0 0 8px;
+}
+
+.competitor-meta {
+  margin: 0 0 10px;
+  color: #4a6e3a;
+  font-weight: 700;
+}
+
+.competitor-card p {
+  margin: 0 0 14px;
+  line-height: 1.6;
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 22px;
+}
+
 @media (max-width: 720px) {
   .app-shell {
     padding: 30px 18px;

@@ -69,8 +69,9 @@ function App() {
       margin:       10,
       filename:     'Smart_Invoice_Report.pdf',
       image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2 },
-      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      html2canvas:  { scale: 2, useCORS: true },
+      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      pagebreak:    { mode: ['css', 'legacy'], after: '.page-break' }
     };
     html2pdf().set(opt).from(element).save();
   }
@@ -97,7 +98,18 @@ function App() {
 
       {productData && (
         <div className="content-stack">
-          <section id="report-content" className="card report-card">
+          <section id="report-content" className="card report-card pdf-report">
+            <div className="pdf-cover">
+              <div>
+                <h1>Smart Invoice AI Report</h1>
+                <p className="report-description">A clean, printable summary of the extracted invoice data and competitor insights.</p>
+              </div>
+              <div className="report-meta">
+                <span>Generated: {new Date().toLocaleDateString()}</span>
+                <span>AI Invoice Assistant</span>
+              </div>
+            </div>
+
             <div className="card-header">
               <div>
                 <h2>📦 Extracted Details</h2>
@@ -106,9 +118,20 @@ function App() {
               <span className="pill">AI Summary</span>
             </div>
 
-            <p><strong>Product:</strong> {productData.product_name}</p>
-            <p><strong>Brand:</strong> {productData.brand}</p>
-            <p><strong>Price:</strong> {productData.price}</p>
+            <div className="detail-grid">
+              <div className="detail-row">
+                <span className="detail-label">Product</span>
+                <span>{productData.product_name}</span>
+              </div>
+              <div className="detail-row">
+                <span className="detail-label">Brand</span>
+                <span>{productData.brand}</span>
+              </div>
+              <div className="detail-row">
+                <span className="detail-label">Price</span>
+                <span>{productData.price}</span>
+              </div>
+            </div>
 
             <div className="section-block">
               <h3>📖 How to Use:</h3>
