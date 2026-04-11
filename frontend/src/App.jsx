@@ -2,6 +2,8 @@ import { useState } from 'react'
 import html2pdf from 'html2pdf.js' // <-- NEW IMPORT
 import './App.css'
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000'
+
 function App() {
   const [file, setFile] = useState(null)
   const [statusMessage, setStatusMessage] = useState("")
@@ -21,7 +23,7 @@ function App() {
     formData.append("file", file)
 
     try {
-      const response = await fetch("https://smart-invoice-backend-qyt4.onrender.com/upload", {
+      const response = await fetch(`${BACKEND_URL}/upload`, {
         method: "POST",
         body: formData,
       })
@@ -42,7 +44,7 @@ function App() {
   const handleResearch = async () => {
     setIsResearching(true)
     try {
-      const response = await fetch("https://smart-invoice-backend-qyt4.onrender.com/research", {
+      const response = await fetch(`${BACKEND_URL}/research`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ product_name: productData.product_name })

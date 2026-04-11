@@ -9,8 +9,13 @@ from dotenv import load_dotenv
 from pydantic import BaseModel
 from pypdf import PdfReader # <-- NEW IMPORT
 
-load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+load_dotenv(dotenv_path=".env")
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise RuntimeError(
+        "OPENAI_API_KEY is not set. Add it to .env or export it in the environment."
+    )
+client = OpenAI(api_key=api_key)
 
 app = FastAPI()
 
