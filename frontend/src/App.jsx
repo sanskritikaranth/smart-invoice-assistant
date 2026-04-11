@@ -21,7 +21,7 @@ function App() {
     formData.append("file", file)
 
     try {
-      const response = await fetch("http://localhost:8000/upload", {
+      const response = await fetch("https://smart-invoice-backend-qyt4.onrender.com/upload", {
         method: "POST",
         body: formData,
       })
@@ -42,7 +42,7 @@ function App() {
   const handleResearch = async () => {
     setIsResearching(true)
     try {
-      const response = await fetch("http://localhost:8000/research", {
+      const response = await fetch("https://smart-invoice-backend-qyt4.onrender.com/research", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ product_name: productData.product_name })
