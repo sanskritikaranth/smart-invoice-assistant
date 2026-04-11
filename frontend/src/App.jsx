@@ -2,7 +2,7 @@ import { useState } from 'react'
 import html2pdf from 'html2pdf.js' // <-- NEW IMPORT
 import './App.css'
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'https://smart-invoice-assistant.vercel.app/'
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'https://smart-invoice-backend-qyt4.onrender.com'
 
 function App() {
   const [file, setFile] = useState(null)
