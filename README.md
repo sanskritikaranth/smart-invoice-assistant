@@ -1,13 +1,13 @@
-# Smart Invoice Assistant
+﻿# Smart Invoice Assistant
 
-An AI-powered document processing app that extracts structured data from invoice/receipt images or PDFs, researches competing products, and generates a downloadable PDF report — built with React, FastAPI, and the OpenAI Vision API.
+An AI-powered document processing app that extracts structured data from invoice/receipt images or PDFs, researches competing products, and generates a downloadable PDF report â€” built with React, FastAPI, and the OpenAI Vision API.
 
 ## Features
 
-- 📤 **Upload** an invoice or receipt as an image or PDF
-- 🤖 **AI extraction** — pulls product name, brand, price, and usage instructions using GPT-4o-mini (Vision API for images, text parsing for PDFs via `pypdf`)
-- 🔍 **Competitor research** — recommends 3 similar/alternative products with estimated pricing and ratings
-- 📄 **PDF report export** — generates a polished, downloadable report of the findings using `html2pdf.js`
+- ðŸ“¤ **Upload** an invoice or receipt as an image or PDF
+- ðŸ¤– **AI extraction** â€” pulls product name, brand, price, and usage instructions using GPT-4o-mini (Vision API for images, text parsing for PDFs via `pypdf`)
+- ðŸ” **Competitor research** â€” recommends 3 similar/alternative products with estimated pricing and ratings
+- ðŸ“„ **PDF report export** â€” generates a polished, downloadable report of the findings using `html2pdf.js`
 
 ## Tech Stack
 
@@ -19,14 +19,14 @@ An AI-powered document processing app that extracts structured data from invoice
 
 ```
 smart-invoice-assistant/
-├── main.py              # FastAPI backend — upload, extraction, and research endpoints
-├── requirements.txt      # Python dependencies
-├── frontend/
-│   ├── src/
-│   │   ├── App.jsx       # Main UI — upload, results, PDF export
-│   │   └── ...
-│   └── package.json
-└── .env                  # OPENAI_API_KEY (not committed)
+â”œâ”€â”€ main.py              # FastAPI backend â€” upload, extraction, and research endpoints
+â”œâ”€â”€ requirements.txt      # Python dependencies
+â”œâ”€â”€ frontend/
+â”‚   â”œâ”€â”€ src/
+â”‚   â”‚   â”œâ”€â”€ App.jsx       # Main UI â€” upload, results, PDF export
+â”‚   â”‚   â””â”€â”€ ...
+â”‚   â””â”€â”€ package.json
+â””â”€â”€ .env                  # OPENAI_API_KEY (not committed)
 ```
 
 ## Getting Started
@@ -68,10 +68,13 @@ The frontend runs at `http://localhost:5173` (Vite default).
 
 ## Live Demo
 
-- Frontend: _add your Vercel URL here_
-- Backend: _add your Render URL here_
+- Frontend: https://smart-invoice-assistant.vercel.app
+- Backend: https://smart-invoice-backend-qyt4.onrender.com
 
 ## Notes
 
 - Requires an OpenAI API key with access to `gpt-4o-mini`.
 - CORS is currently open (`allow_origins=["*"]`) for demo purposes.
+- Backend is on Render's free tier and may take ~30-50s to spin up on first request after inactivity.
+
+
