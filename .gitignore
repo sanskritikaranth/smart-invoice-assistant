@@ -3,3 +3,10 @@
 .venv-1/
 __pycache__/
 frontend/node_modules/
+frontend/dist/
+frontend/.env
+ 
+# Local SQLite database — never commit real user data / password hashes
+*.db
+*.sqlite3
+ 

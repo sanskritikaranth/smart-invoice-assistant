@@ -2,7 +2,10 @@
 uvicorn
 openai
 python-dotenv
-pydantic
+pydantic[email]
 pypdf
 python-multipart
 requests
+sqlalchemy
+bcrypt
+python-jose[cryptography]
